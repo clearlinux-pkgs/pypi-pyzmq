@@ -4,7 +4,7 @@
 #
 Name     : pypi-pyzmq
 Version  : 22.3.0
-Release  : 94
+Release  : 95
 URL      : https://files.pythonhosted.org/packages/6c/95/d37e7db364d7f569e71068882b1848800f221c58026670e93a4c6d50efe7/pyzmq-22.3.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/6c/95/d37e7db364d7f569e71068882b1848800f221c58026670e93a4c6d50efe7/pyzmq-22.3.0.tar.gz
 Summary  : Python bindings for 0MQ
@@ -13,16 +13,13 @@ License  : BSD-2-Clause BSD-3-Clause GPL-3.0 LGPL-3.0
 Requires: pypi-pyzmq-license = %{version}-%{release}
 Requires: pypi-pyzmq-python = %{version}-%{release}
 Requires: pypi-pyzmq-python3 = %{version}-%{release}
-BuildRequires : Cython
 BuildRequires : buildreq-distutils3
-Provides: pyzmq
-Provides: pyzmq-python
-Provides: pyzmq-python3
 BuildRequires : libzmq-dev
 BuildRequires : pypi(cffi)
 BuildRequires : pypi(packaging)
 BuildRequires : pypi(setuptools)
 BuildRequires : pypi(wheel)
+BuildRequires : pypi-cython
 BuildRequires : python3-dev
 
 %description
@@ -65,7 +62,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1641487293
+export SOURCE_DATE_EPOCH=1642361638
 export GCC_IGNORE_WERROR=1
 export CFLAGS="-O2 -g -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector --param=ssp-buffer-size=32 -Wformat -Wformat-security -Wno-error -Wl,-z,max-page-size=0x1000 -march=westmere -mtune=haswell"
 export CXXFLAGS=$CFLAGS
