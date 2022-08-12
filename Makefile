@@ -1,5 +1,5 @@
 PKG_NAME := pypi-pyzmq
-URL = https://files.pythonhosted.org/packages/36/80/50962c33a3ad813b086fe2bf023bb8b79cb232f8e15b1b54a4d5b05b62ff/pyzmq-23.2.0.tar.gz
+URL = https://files.pythonhosted.org/packages/72/37/d5603f352522e249e44ee767a8a59b3fe7cf7f708a94fd40a637c6890add/pyzmq-23.2.1.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
