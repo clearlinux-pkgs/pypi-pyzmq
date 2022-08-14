@@ -4,7 +4,7 @@
 #
 Name     : pypi-pyzmq
 Version  : 23.2.1
-Release  : 102
+Release  : 103
 URL      : https://files.pythonhosted.org/packages/72/37/d5603f352522e249e44ee767a8a59b3fe7cf7f708a94fd40a637c6890add/pyzmq-23.2.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/72/37/d5603f352522e249e44ee767a8a59b3fe7cf7f708a94fd40a637c6890add/pyzmq-23.2.1.tar.gz
 Summary  : Python bindings for 0MQ
