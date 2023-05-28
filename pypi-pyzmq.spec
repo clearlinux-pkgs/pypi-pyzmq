@@ -4,18 +4,24 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-pyzmq
-Version  : 25.0.2
-Release  : 113
-URL      : https://files.pythonhosted.org/packages/bf/7f/24a55c3393d54570f26fa8845e8e42e813bf1b7fb668ed5d3de76b71dbe9/pyzmq-25.0.2.tar.gz
-Source0  : https://files.pythonhosted.org/packages/bf/7f/24a55c3393d54570f26fa8845e8e42e813bf1b7fb668ed5d3de76b71dbe9/pyzmq-25.0.2.tar.gz
+Version  : 25.1.0
+Release  : 114
+URL      : https://files.pythonhosted.org/packages/64/9c/2b2614b0b86ff703b3a33ea5e044923bd7d100adc8c829d579a9b71ea9e7/pyzmq-25.1.0.tar.gz
+Source0  : https://files.pythonhosted.org/packages/64/9c/2b2614b0b86ff703b3a33ea5e044923bd7d100adc8c829d579a9b71ea9e7/pyzmq-25.1.0.tar.gz
 Summary  : Python bindings for 0MQ
 Group    : Development/Tools
-License  : BSD-2-Clause BSD-3-Clause GPL-3.0
+License  : BSD-2-Clause BSD-3-Clause GPL-3.0 LGPL-3.0+ LGPL-3.0-or-later
 Requires: pypi-pyzmq-license = %{version}-%{release}
 Requires: pypi-pyzmq-python = %{version}-%{release}
 Requires: pypi-pyzmq-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
 BuildRequires : libzmq-dev
+BuildRequires : pypi(cffi)
+BuildRequires : pypi(cython)
+BuildRequires : pypi(packaging)
+BuildRequires : pypi(setuptools)
+BuildRequires : pypi(setuptools_scm)
+BuildRequires : pypi(wheel)
 BuildRequires : pypi-cython
 BuildRequires : python3-dev
 # Suppress stripping binaries
@@ -23,9 +29,18 @@ BuildRequires : python3-dev
 %define debug_package %{nil}
 
 %description
-# PyZMQ: Python bindings for ØMQ
-This package contains Python bindings for [ZeroMQ](https://zeromq.org).
-ØMQ is a lightweight and fast messaging implementation.
+The 0MQ lightweight messaging kernel is a library which extends the
+standard socket interfaces with features traditionally provided by
+specialized messaging middle-ware products. 0MQ sockets provide an
+abstraction of asynchronous message queues, multiple messaging
+patterns, message filtering (subscriptions), seamless access to
+multiple transport protocols and more.
+
+This package contains the python bindings.
+
+
+PyZMQ is a lightweight and super-fast messaging library built on top of
+the ZeroMQ library (http://www.zeromq.org).
 
 %package license
 Summary: license components for the pypi-pyzmq package.
@@ -55,10 +70,10 @@ python3 components for the pypi-pyzmq package.
 
 
 %prep
-%setup -q -n pyzmq-25.0.2
-cd %{_builddir}/pyzmq-25.0.2
+%setup -q -n pyzmq-25.1.0
+cd %{_builddir}/pyzmq-25.1.0
 pushd ..
-cp -a pyzmq-25.0.2 buildavx2
+cp -a pyzmq-25.1.0 buildavx2
 popd
 
 %build
@@ -66,7 +81,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1683047376
+export SOURCE_DATE_EPOCH=1685242859
 export GCC_IGNORE_WERROR=1
 export CFLAGS="-O2 -g -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector --param=ssp-buffer-size=32 -Wformat -Wformat-security -Wno-error -Wl,-z,max-page-size=0x4000 -march=westmere"
 export CXXFLAGS=$CFLAGS
