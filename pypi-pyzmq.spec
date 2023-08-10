@@ -4,13 +4,13 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-pyzmq
-Version  : 25.1.0
-Release  : 115
-URL      : https://files.pythonhosted.org/packages/64/9c/2b2614b0b86ff703b3a33ea5e044923bd7d100adc8c829d579a9b71ea9e7/pyzmq-25.1.0.tar.gz
-Source0  : https://files.pythonhosted.org/packages/64/9c/2b2614b0b86ff703b3a33ea5e044923bd7d100adc8c829d579a9b71ea9e7/pyzmq-25.1.0.tar.gz
+Version  : 25.1.1
+Release  : 116
+URL      : https://files.pythonhosted.org/packages/3f/7c/69d31a75a3fe9bbab349de7935badac61396f22baf4ab53179a8d940d58e/pyzmq-25.1.1.tar.gz
+Source0  : https://files.pythonhosted.org/packages/3f/7c/69d31a75a3fe9bbab349de7935badac61396f22baf4ab53179a8d940d58e/pyzmq-25.1.1.tar.gz
 Summary  : Python bindings for 0MQ
 Group    : Development/Tools
-License  : Apache-2.0 BSD-2-Clause BSD-3-Clause GPL-3.0 LGPL-3.0+ LGPL-3.0-or-later
+License  : Apache-2.0 BSD-2-Clause BSD-3-Clause GPL-3.0 LGPL-3.0 LGPL-3.0+ LGPL-3.0-or-later
 Requires: pypi-pyzmq-license = %{version}-%{release}
 Requires: pypi-pyzmq-python = %{version}-%{release}
 Requires: pypi-pyzmq-python3 = %{version}-%{release}
@@ -70,10 +70,10 @@ python3 components for the pypi-pyzmq package.
 
 
 %prep
-%setup -q -n pyzmq-25.1.0
-cd %{_builddir}/pyzmq-25.1.0
+%setup -q -n pyzmq-25.1.1
+cd %{_builddir}/pyzmq-25.1.1
 pushd ..
-cp -a pyzmq-25.1.0 buildavx2
+cp -a pyzmq-25.1.1 buildavx2
 popd
 
 %build
@@ -81,9 +81,9 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1685548743
+export SOURCE_DATE_EPOCH=1691678624
 export GCC_IGNORE_WERROR=1
-export CFLAGS="-O2 -g -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector --param=ssp-buffer-size=32 -Wformat -Wformat-security -Wno-error -Wl,-z,max-page-size=0x4000 -march=westmere"
+export CFLAGS="-O2 -g -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector --param=ssp-buffer-size=32 -Wformat -Wformat-security -Wno-error -Wl,-z,max-page-size=0x4000 -fPIC -march=westmere"
 export CXXFLAGS=$CFLAGS
 export FFLAGS="-O2 -g -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector --param=ssp-buffer-size=32 -Wno-error -Wl,-z,max-page-size=0x4000 -march=westmere"
 export FCFLAGS=$FFLAGS
@@ -113,6 +113,7 @@ rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pypi-pyzmq
 cp %{_builddir}/pyzmq-%{version}/LICENSE.BSD %{buildroot}/usr/share/package-licenses/pypi-pyzmq/1b42a01e1b763d63d56e3345eb55116593940664 || :
 cp %{_builddir}/pyzmq-%{version}/bundled/zeromq/COPYING %{buildroot}/usr/share/package-licenses/pypi-pyzmq/99b1a5c7351fd39a26db3b560ce91eec4a3aca3d || :
+cp %{_builddir}/pyzmq-%{version}/bundled/zeromq/COPYING.LESSER %{buildroot}/usr/share/package-licenses/pypi-pyzmq/cd024bd665e7b8244ee020856b359e3d7babc454 || :
 cp %{_builddir}/pyzmq-%{version}/bundled/zeromq/external/wepoll/license.txt %{buildroot}/usr/share/package-licenses/pypi-pyzmq/0cf031c01628cf0ee33ed398038238a76ebbd1b7 || :
 cp %{_builddir}/pyzmq-%{version}/packaging/debian/copyright %{buildroot}/usr/share/package-licenses/pypi-pyzmq/869cbcbc0712a71dc964bf3768a182d018ebdd4b || :
 pip install --root=%{buildroot} --no-deps --ignore-installed dist/*.whl
@@ -138,6 +139,7 @@ popd
 /usr/share/package-licenses/pypi-pyzmq/1b42a01e1b763d63d56e3345eb55116593940664
 /usr/share/package-licenses/pypi-pyzmq/869cbcbc0712a71dc964bf3768a182d018ebdd4b
 /usr/share/package-licenses/pypi-pyzmq/99b1a5c7351fd39a26db3b560ce91eec4a3aca3d
+/usr/share/package-licenses/pypi-pyzmq/cd024bd665e7b8244ee020856b359e3d7babc454
 
 %files python
 %defattr(-,root,root,-)
