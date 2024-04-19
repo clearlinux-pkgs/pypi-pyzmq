@@ -6,10 +6,10 @@
 # autospec commit: 5905be9
 #
 Name     : pypi-pyzmq
-Version  : 26.0.0
-Release  : 121
-URL      : https://files.pythonhosted.org/packages/46/db/76b6c3a512adf5caf74827a7a02e1b311240d4544cc450623568b30109f8/pyzmq-26.0.0.tar.gz
-Source0  : https://files.pythonhosted.org/packages/46/db/76b6c3a512adf5caf74827a7a02e1b311240d4544cc450623568b30109f8/pyzmq-26.0.0.tar.gz
+Version  : 26.0.1
+Release  : 122
+URL      : https://files.pythonhosted.org/packages/b5/01/20045e7007272d16151a76598ada299675b1528e60d003f4f1d4caee0f63/pyzmq-26.0.1.tar.gz
+Source0  : https://files.pythonhosted.org/packages/b5/01/20045e7007272d16151a76598ada299675b1528e60d003f4f1d4caee0f63/pyzmq-26.0.1.tar.gz
 Summary  : Python bindings for 0MQ
 Group    : Development/Tools
 License  : Apache-2.0 BSD-3-Clause LGPL-3.0+ LGPL-3.0-or-later
@@ -48,15 +48,15 @@ license components for the pypi-pyzmq package.
 
 
 %prep
-%setup -q -n pyzmq-26.0.0
-cd %{_builddir}/pyzmq-26.0.0
+%setup -q -n pyzmq-26.0.1
+cd %{_builddir}/pyzmq-26.0.1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1713192570
+export SOURCE_DATE_EPOCH=1713539452
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -129,7 +129,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1713192570
+export SOURCE_DATE_EPOCH=1713539452
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pypi-pyzmq
 cp %{_builddir}/pyzmq-%{version}/LICENSE.md %{buildroot}/usr/share/package-licenses/pypi-pyzmq/1b42a01e1b763d63d56e3345eb55116593940664 || :
