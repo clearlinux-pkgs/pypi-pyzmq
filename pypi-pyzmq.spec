@@ -7,7 +7,7 @@
 #
 Name     : pypi-pyzmq
 Version  : 26.0.2
-Release  : 123
+Release  : 124
 URL      : https://files.pythonhosted.org/packages/d4/47/16ca47d3341fcaa4ea1f670c5375953994e2549aabb4950ae32764564e52/pyzmq-26.0.2.tar.gz
 Source0  : https://files.pythonhosted.org/packages/d4/47/16ca47d3341fcaa4ea1f670c5375953994e2549aabb4950ae32764564e52/pyzmq-26.0.2.tar.gz
 Summary  : Python bindings for 0MQ
@@ -56,7 +56,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1713666582
+export SOURCE_DATE_EPOCH=1713795778
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -129,7 +129,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1713666582
+export SOURCE_DATE_EPOCH=1713795778
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pypi-pyzmq
 cp %{_builddir}/pyzmq-%{version}/LICENSE.md %{buildroot}/usr/share/package-licenses/pypi-pyzmq/1b42a01e1b763d63d56e3345eb55116593940664 || :
