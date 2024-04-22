@@ -2,3 +2,6 @@
 # picked up automatically. One name per line, no whitespace.
 pypi-cython
 libzmq-dev
+pypi-scikit_build
+pypi-scikit_build-python3
+cmake
