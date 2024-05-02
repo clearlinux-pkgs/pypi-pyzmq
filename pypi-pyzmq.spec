@@ -6,10 +6,10 @@
 # autospec commit: 5905be9
 #
 Name     : pypi-pyzmq
-Version  : 26.0.2
-Release  : 125
-URL      : https://files.pythonhosted.org/packages/d4/47/16ca47d3341fcaa4ea1f670c5375953994e2549aabb4950ae32764564e52/pyzmq-26.0.2.tar.gz
-Source0  : https://files.pythonhosted.org/packages/d4/47/16ca47d3341fcaa4ea1f670c5375953994e2549aabb4950ae32764564e52/pyzmq-26.0.2.tar.gz
+Version  : 26.0.3
+Release  : 126
+URL      : https://files.pythonhosted.org/packages/c4/9a/0e2ab500fd5a5a41e7d003e4a49faa7a0333db13e54498a3cf749b9eedd0/pyzmq-26.0.3.tar.gz
+Source0  : https://files.pythonhosted.org/packages/c4/9a/0e2ab500fd5a5a41e7d003e4a49faa7a0333db13e54498a3cf749b9eedd0/pyzmq-26.0.3.tar.gz
 Summary  : Python bindings for 0MQ
 Group    : Development/Tools
 License  : Apache-2.0 BSD-3-Clause LGPL-3.0+ LGPL-3.0-or-later
@@ -74,10 +74,10 @@ python3 components for the pypi-pyzmq package.
 
 
 %prep
-%setup -q -n pyzmq-26.0.2
-cd %{_builddir}/pyzmq-26.0.2
+%setup -q -n pyzmq-26.0.3
+cd %{_builddir}/pyzmq-26.0.3
 pushd ..
-cp -a pyzmq-26.0.2 buildavx2
+cp -a pyzmq-26.0.3 buildavx2
 popd
 
 %build
@@ -85,7 +85,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1713797263
+export SOURCE_DATE_EPOCH=1714671819
 export GCC_IGNORE_WERROR=1
 CLEAR_INTERMEDIATE_CFLAGS="-O2 -g -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector --param=ssp-buffer-size=32 -Wformat -Wformat-security -Wno-error -Wl,-z,max-page-size=0x4000 -march=westmere"
 CLEAR_INTERMEDIATE_CXXFLAGS=$CLEAR_INTERMEDIATE_CFLAGS
