@@ -7,7 +7,7 @@
 #
 Name     : pypi-pyzmq
 Version  : 26.2.0
-Release  : 130
+Release  : 131
 URL      : https://files.pythonhosted.org/packages/fd/05/bed626b9f7bb2322cdbbf7b4bd8f54b1b617b0d2ab2d3547d6e39428a48e/pyzmq-26.2.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/fd/05/bed626b9f7bb2322cdbbf7b4bd8f54b1b617b0d2ab2d3547d6e39428a48e/pyzmq-26.2.0.tar.gz
 Summary  : Python bindings for 0MQ
@@ -67,7 +67,6 @@ Summary: python3 components for the pypi-pyzmq package.
 Group: Default
 Requires: python3-core
 Provides: pypi(pyzmq)
-Provides: pypi(pyzmq)
 
 %description python3
 python3 components for the pypi-pyzmq package.
@@ -85,7 +84,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1730172288
+export SOURCE_DATE_EPOCH=1730172882
 export GCC_IGNORE_WERROR=1
 CLEAR_INTERMEDIATE_CFLAGS="-O2 -g -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector --param=ssp-buffer-size=32 -Wformat -Wformat-security -Wno-error -Wl,-z,max-page-size=0x4000 -march=westmere"
 CLEAR_INTERMEDIATE_CXXFLAGS=$CLEAR_INTERMEDIATE_CFLAGS
